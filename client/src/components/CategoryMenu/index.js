@@ -13,7 +13,7 @@ function CategoryMenu({ setCategory }) {
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
     useEffect(() => {
-        if (CategoryData) {
+        if (categoryData) {
             dispatch({
                 type: UPDATE_CATEGORIES,
                 categories: categoryData.categories

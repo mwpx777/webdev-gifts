@@ -64,3 +64,5 @@ export function idbPromise(storeName, method, object) {
   
     });
   }
+
+  export default idbPromise;

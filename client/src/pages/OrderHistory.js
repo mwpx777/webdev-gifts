@@ -1,4 +1,4 @@
-L// ORDER HISTORY
+// ORDER HISTORY
 
 import React from "react";
 import { Link } from "react-router-dom";

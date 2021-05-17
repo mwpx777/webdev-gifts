@@ -25,7 +25,7 @@ function Success() {
             }
 
             // send to homepage after 3 seconds
-            setTimeOut(() => {
+            setTimeout(() => {
                 window.location.assign('/');
             }, 3000);
         }

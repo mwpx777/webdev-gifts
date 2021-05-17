@@ -35,7 +35,7 @@ function ProductList() {
     }, [data, loading, dispatch]);
 
     function filterProducts() {
-        if (!currentCatgory) {
+        if (!currentCategory) {
             return state.products;
         }
         return state.products.filter(product => product.category._id === currentCategory);

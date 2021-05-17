@@ -20,7 +20,7 @@ function Detail() {
     const { id } = useParams();
     const { currentProduct, setCurrentProduct } = useState({});
     const [loading, data] = useQuery(QUERY_PRODUCTS);
-    const { products, data } = state;
+    const { products, cart } = state;
 
     const addToCart = () => {
         const itemInCart = cart.find((cartItem) => cartItem._id === id);
@@ -28,7 +28,7 @@ function Detail() {
         if (itemInCart) {
             dispatch({
                 type: UPDATE_CART_QUANTITY,
-                _id: _id,
+                _id: id,
                 purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
             });
 
