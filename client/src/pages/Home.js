@@ -16,4 +16,4 @@ const Home = () => {
 };
 
 
-export default HTMLModElement;
+export default Home;
