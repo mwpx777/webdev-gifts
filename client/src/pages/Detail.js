@@ -18,8 +18,8 @@ import {
 function Detail() {
     const [state, dispatch] = useStoreContext();
     const { id } = useParams();
-    const { currentProduct, setCurrentProduct } = useState({});
-    const [loading, data] = useQuery(QUERY_PRODUCTS);
+    const [currentProduct, setCurrentProduct ] = useState({});
+    const {loading, data} = useQuery(QUERY_PRODUCTS);
     const { products, cart } = state;
 
     const addToCart = () => {
@@ -52,27 +52,34 @@ function Detail() {
         });
         idbPromise('cart', 'delete', { ...currentProduct });
     };
-
     useEffect(() => {
-        // products already in GlobalStore
+        // products already in globalStore
         if (products.length) {
-            setCurrentProduct(products.find(product => product._id === id));
-
-            // data retrieved from server
+          setCurrentProduct(products.find(product => product._id === id));
+    
+          // retrieved from server
         } else if (data) {
-            dispatch({
-                type: UPDATE_PRODUCTS,
-                products: data.products
-            });
+          dispatch({
+            type: UPDATE_PRODUCTS,
+            products: data.products
+          });
+    
+          data.products.forEach(product => {
+            idbPromise('products', 'put', product);
+          });
+    
+    
+          // get cache from idb
         } else if (!loading) {
-            idbPromise('products', 'get').then((products) => {
-                dispatch({
-                    type: UPDATE_PRODUCTS,
-                    products: products
-                });
+          idbPromise('products', 'get').then((products) => {
+            dispatch({
+              type: UPDATE_PRODUCTS,
+              products: products
             });
+          });
         }
-    }, [products, data, loading, dispatch, id]);
+      }, [products, data, loading, dispatch, id]);
+
 
     return (
         <>
@@ -84,9 +91,9 @@ function Detail() {
                     <h2>{currentProduct.name}</h2>
                     <p>{currentProduct.description}</p>
                     <p>
-                        <strong>Price: {currentProduct.price}{" "}</strong>
+                        <strong>Price: ${currentProduct.price}{" "}</strong>
                         <button onClick={addToCart}>
-                            Add To Cart!
+                            Add To Cart
                 </button>
                         <button
                             disables={!cart.find(p => p._id === currentProduct.id)}
