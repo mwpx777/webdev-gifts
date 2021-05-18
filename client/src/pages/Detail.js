@@ -18,8 +18,8 @@ import {
 function Detail() {
     const [state, dispatch] = useStoreContext();
     const { id } = useParams();
-    const [currentProduct, setCurrentProduct ] = useState({});
-    const {loading, data} = useQuery(QUERY_PRODUCTS);
+    const [currentProduct, setCurrentProduct] = useState({});
+    const { loading, data } = useQuery(QUERY_PRODUCTS);
     const { products, cart } = state;
 
     const addToCart = () => {
@@ -55,54 +55,57 @@ function Detail() {
     useEffect(() => {
         // products already in globalStore
         if (products.length) {
-          setCurrentProduct(products.find(product => product._id === id));
-    
-          // retrieved from server
+            setCurrentProduct(products.find(product => product._id === id));
+
+            // retrieved from server
         } else if (data) {
-          dispatch({
-            type: UPDATE_PRODUCTS,
-            products: data.products
-          });
-    
-          data.products.forEach(product => {
-            idbPromise('products', 'put', product);
-          });
-    
-    
-          // get cache from idb
-        } else if (!loading) {
-          idbPromise('products', 'get').then((products) => {
             dispatch({
-              type: UPDATE_PRODUCTS,
-              products: products
+                type: UPDATE_PRODUCTS,
+                products: data.products
             });
-          });
+
+            data.products.forEach(product => {
+                idbPromise('products', 'put', product);
+            });
+
+
+            // get cache from idb
+        } else if (!loading) {
+            idbPromise('products', 'get').then((products) => {
+                dispatch({
+                    type: UPDATE_PRODUCTS,
+                    products: products
+                });
+            });
         }
-      }, [products, data, loading, dispatch, id]);
+    }, [products, data, loading, dispatch, id]);
 
 
     return (
         <>
             {currentProduct ? (
-                <div className="container my-1">
+                <div className="container">
                     <Link to="/">
                         ← Back to Products
                 </Link>
-                    <h2>{currentProduct.name}</h2>
-                    <p>{currentProduct.description}</p>
-                    <p>
-                        <strong>Price: ${currentProduct.price}{" "}</strong>
+                    <div className="detail-row">
+                        <h1>{currentProduct.name}</h1>
+                    </div>
+                    <div className="detail-row">
+                        <p>{currentProduct.description}</p>
+                    </div>
+                    <div className="detail-row">
+
+                        <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} />
+                        </div>
+                        
+                        <div className="detail-row"><strong>Price: ${currentProduct.price}{" "}</strong>
                         <button onClick={addToCart}>
                             Add To Cart
-                </button>
-                        <button
-                            disables={!cart.find(p => p._id === currentProduct.id)}
-                            onClick={removeFromCart}>
-                            Remove From Cart
-                </button>
-                    </p>
-                    <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} />
-                </div>
+                        </button>
+                        </div>
+                    </div>
+               
             ) : null}
             {
                 loading ? <img src={spinner} alt="loading spinner" /> : null

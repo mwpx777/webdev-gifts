@@ -35,12 +35,12 @@ export const reducer = (state, action) => {
             return{
                 ...state,
                 cartOpen: true,
-                cart: [...state.cart, ...action.product]
+                cart: [...state.cart, action.product]
             };
         case ADD_MULTIPLE_TO_CART:
             return{
                 ...state,
-                cart:[...state.cart, ...action.products]
+                cart:[...state.cart, action.products]
             };
         case REMOVE_FROM_CART:
                 let newState = state.cart.filter(product => {

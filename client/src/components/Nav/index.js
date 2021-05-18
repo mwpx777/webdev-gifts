@@ -3,6 +3,7 @@
 import React from 'react';
 import Auth from '../../utils/auth';
 import { Link } from "react-router-dom";
+import icon from '../../assets/icon.png'
 
 function Nav() {
 
@@ -44,8 +45,8 @@ function Nav() {
         <header className="flex-row px-1">
             <h1>
                 <Link to="/">
-                    <span role="img" aria-label="shopping bag">🛍️</span>
-                    WebDev Gifts
+                    <img src={icon} id="icon"></img>
+                    2020-2021 WebDev Gifts
                 </Link>
             </h1>
 

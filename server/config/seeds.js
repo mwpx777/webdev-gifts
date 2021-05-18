@@ -59,7 +59,7 @@ db.once('open', async () => {
             description: "Look like you care about the earth while sipping your favorite beverage in style!",
             image:"bottle.png",
             category: categories[2]._id,
-            price: 9.99
+            price: 19.99
         },
         {
             name: "WebDev coffee mug",
@@ -74,6 +74,13 @@ db.once('open', async () => {
             image:"sticker.png",
             category: categories[3]._id,
             price: 1.99
+        },
+        {
+            name: "WebDev beanie",
+            description: "Perfect for wearing when rolling through Compton or on a cold winter's day.",
+            image:"beanie.png",
+            category: categories[1]._id,
+            price: 10.99
         },
       
     ]);

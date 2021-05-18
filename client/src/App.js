@@ -11,8 +11,11 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import Success from './pages/Success';
+
+import Footer from './components/Footer';
 import { StoreProvider } from './utils/GlobalState';
 import OrderHistory from './pages/OrderHistory';
+
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -29,6 +32,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+
       <Router>
         <div>
           <StoreProvider>
@@ -43,8 +47,10 @@ function App() {
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
+          <Footer />
         </div>
       </Router>
+
     </ApolloProvider>
   )
 }
