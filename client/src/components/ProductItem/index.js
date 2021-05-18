@@ -47,7 +47,7 @@ function ProductItem(item) {
                 <div className="cardTitle">
                     <h4><b>{name} ${price}</b></h4>
                     <span></span>
-                    <button onClick={addToCart}>Add to cart!</button>
+                    <button  className="hvr-bounce-in" onClick={addToCart}>Add to cart!</button>
                 </div>
             </div>
         </div>
