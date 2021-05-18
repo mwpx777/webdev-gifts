@@ -44,10 +44,13 @@ function ProductItem(item) {
                 <img src={`/images/${image}`} alt={name} id="cardImage" />
             </Link>
             <div className="cardContainer">
-                <div className="cardTitle">
-                    <h4><b>{name} ${price}</b></h4>
-                    <span></span>
-                    <button  className="hvr-bounce-in" onClick={addToCart}>Add to cart!</button>
+                <div className="row">
+                    <div className="cardTitle">
+                        <h5><b>{name} ${price}</b></h5>
+                    </div>
+                    <div className="row">
+                    <button id="addToCart" className="hvr-bounce-in" onClick={addToCart}>Add to cart!</button>
+                </div>
                 </div>
             </div>
         </div>
