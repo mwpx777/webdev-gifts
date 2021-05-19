@@ -1,11 +1,29 @@
-body {
+* {
+  font-family: 'Epilogue', sans-serif;
+  
+}
+
+
+
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 
+
+} */
+
+body { 
+  background: url(./assets/madison-skyline.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 code {
@@ -161,4 +179,22 @@ button {
   border-radius: 10px;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+#cart {
+  background: rgb(204, 204, 204);
+  
+}
+
+#cartImage {
+  border-radius: 10px;
+}
+
+#cartClose {
+  color: #B11F2C;
+  text-decoration: none;
+}
+
+#trashCan {
+  cursor: pointer;
 }

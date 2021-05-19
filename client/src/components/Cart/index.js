@@ -1,29 +1,35 @@
 // CART
 
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import './styles.css';
-import { useLazyQuery } from '@apollo/react-hooks';
+// useLazyQuery will only run when calles upon
+import { useLazyQuery } from '@apollo/react-hooks'
+
+// this will establish a state variable
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
+import { QUERY_CHECKOUT } from '../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
-import {QUERY_CHECKOUT} from '../../utils/queries';
 
+// this will perform the checkout redirect
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
-const Cart = () => {
-    const [state, dispatch] = useStoreContext();
 
-    // only run when checkout is called
-    // data contains checkout info
+const Cart = () => {
+
+    const [state, dispatch] = useStoreContext();
+    // console.log(state);
+
+    // data will contain the checkout session
     const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
     useEffect(() => {
-        if (data) {
+        if(data){
             stripePromise.then((res) => {
-                res.redirectToCheckout({ sessionId: data.checkout.session })
+                res.redirectToCheckout({sessionId: data.checkout.session})
             })
         }
     }, [data])
@@ -36,21 +42,23 @@ const Cart = () => {
                 products: [...cart]
             });
         };
-        // if nothing in state for cart, run getCart function to get items from objectStore and save to GlobalState object
+        // if nothing in state for the cart, run getCart function to get cart items from objectStore and save to globalState object
         if (!state.cart.length) {
             getCart();
         }
     }, [state.cart.length, dispatch]);
 
+
     function toggleCart() {
-        dispatch({
-            type: TOGGLE_CART
-        });
+        dispatch({ type: TOGGLE_CART });
     }
+
     if (!state.cartOpen) {
         return (
             <div className="cart-closed" onClick={toggleCart}>
-                <span role="img" aria-label="trash">🛒</span>
+                <span
+                    role="img"
+                    aria-label="trash">🛒</span>
             </div>
         );
     };
@@ -65,10 +73,11 @@ const Cart = () => {
 
     function submitCheckout() {
         const productIds = [];
-        // loop over items in cart and add their item._id to productIds empty array
+        // loop over items in state.cart and add their item._id to productIds array
         state.cart.forEach(item => {
             for (let i = 0; i < item.purchaseQuantity; i++) {
                 productIds.push(item._id);
+
             }
         });
         getCheckout({
@@ -77,11 +86,13 @@ const Cart = () => {
         })
     }
 
+
+
     return (
-        <div className="cart">
-            <div className="close" onClick={toggleCart}>[close]</div>
-            <h2>Shopping Cart</h2>
-            {state.cart.length >= 1? (
+        <div className="cart" id="cart">
+            <div className="close" id="cartClose" onClick={toggleCart}>X</div>
+            <h2><b>Shopping Cart</b></h2>
+            {state.cart.length ? (
                 <div>
                     {state.cart.map(item => (
                         <CartItem key={item._id} item={item} />
@@ -90,22 +101,24 @@ const Cart = () => {
                         <strong>Total: ${calculateTotal()}</strong>
                         {
                             Auth.loggedIn() ?
-                                <button onClick={submitCheckout}>Checkout</button>
+                                <button onClick={submitCheckout}>
+                                    Checkout
+                  </button>
                                 :
-                                <span>Login to checkout!</span>
+                                <span>(log in to check out)</span>
                         }
                     </div>
                 </div>
             ) : (
                 <h3>
-                    <span role="img" aria-label="shocked">😱</span>
-                    You haven't added any items to your cart yet!
+                    <span role="img" aria-label="shocked">
+                        😱
+            </span>
+            You haven't added anything to your cart yet!
                 </h3>
             )}
         </div>
-
     )
 };
 
 export default Cart;
-

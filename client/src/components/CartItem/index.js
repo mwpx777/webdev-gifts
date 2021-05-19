@@ -5,7 +5,7 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 
-const CartItem = ({ item , key}) => {
+const CartItem = ({ item }) => {
     const [state, dispatch] = useStoreContext();
 
     const removeFromCart = item => {
@@ -38,12 +38,13 @@ const CartItem = ({ item , key}) => {
     };
 
     return (
-        <div className="flex-row" key= {key}>
+        <div className="flex-row" >
             <div>
-                <img src={`/images/${item.image}`} alt={item.name} />
+                <img src={`/images/${item.image}`} alt={item.name} id="cartImage" />
             </div>
             <div>
-                <div>{item.name}, ${item.price}</div>
+                <div>{item.name} </div>
+                <div>${item.price}</div>
                 <div>
                     <span>Quantity:</span>
                     <input
@@ -54,7 +55,8 @@ const CartItem = ({ item , key}) => {
                     <span
                         onClick={() => removeFromCart(item)}
                         role="img"
-                        aria-label="trash">
+                        aria-label="trash"
+                        id="trashCan">
                         🗑️
                 </span>
                 </div>
