@@ -1,5 +1,6 @@
 * {
-  font-family: 'Epilogue', sans-serif;
+  font-family: 'Teko', sans-serif;
+  font-size:1.3rem;
   
 }
 
@@ -24,6 +25,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+ 
 }
 
 code {
@@ -50,10 +52,10 @@ code {
 
 /* Add some padding inside the card container */
 .cardContainer {
-  padding: 2px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2px 16px;
   
 }
 
@@ -65,12 +67,12 @@ code {
 button {
   margin-left: 1rem;
 }
-/* 
-.cardTitle {
-  display: flex;
-  align-items: center;
+
+/* #btnRow{
   justify-content: center;
 } */
+
+
 
 #backgroundImage {
   background-repeat: no-repeat;
@@ -97,6 +99,7 @@ button {
 #footer, #react{
   justify-content: center;
   align-items: center;
+  color:white;
  
 }
 
@@ -173,13 +176,7 @@ button {
   /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 
-#addToCart {
-  display: flex;
-  justify-content: center;
-  border-radius: 10px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
+
 
 #cart {
   background: rgb(204, 204, 204);
@@ -197,4 +194,46 @@ button {
 
 #trashCan {
   cursor: pointer;
+}
+
+
+ #categoryButtons{
+  display: flex;
+  justify-content: center;
+}
+
+#catBtn {
+ 
+  background: none;
+  border: none;
+  color: white;
+  justify-content: center;
+  
+}
+
+.successBackground {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  color: white;
+  width: 50%;
+  border-radius:20px;
+}
+
+#detailImage {
+  border-radius: 20px;
+}
+
+.detail-row {
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+#addToCart {
+  border-radius: 10px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-self: center;
+  margin: 0
 }

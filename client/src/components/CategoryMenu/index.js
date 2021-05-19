@@ -39,14 +39,18 @@ function CategoryMenu({ setCategory }) {
     };
 
     return (
-        <div>
-            <h2> Categories</h2>
+        <div id="categoryButtons">
+            {/* <div id="categories" className="animate__animated animate__fadeInLeftBig">
+                <h2> Categories</h2>
+            </div> */}
             {categories.map(item => (
                 <button
+                    id="catBtn"
+                    className="animate__animated animate__lightSpeedInLeft"
                     key={item._id}
                     onClick={() => {
                         handleClick(item._id);
-                    }}> {item.name}</button>
+                    }}><h1> {item.name}</h1></button>
             ))}
         </div>
     );

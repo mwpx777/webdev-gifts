@@ -27,19 +27,20 @@ db.once('open', async () => {
             price: 24.99
         },
         {
+            name: "WebDev 2020-2021 tank",
+            description: "Live like Adam `Suns Out, Guns Out` Ramos! This tank might not help you get the ladies, but it will keep you cool while searching for a job! **MUST BE 18 TO PURCHASE!!**",
+            image: "tank.png",
+            category: categories[0]._id,
+            price: 14.99
+        },
+        {
             name: "WebDev 2020-2021 hat",
             description: "Sweet flat brim baseball hat with the official WebDev Logo!  Looks even better when worn backwards!",
             image:"baseball-hat.png",
             category: categories[1]._id,
             price: 24.99
         },
-        {
-            name: "WebDev 2020-2021 tank",
-            description: "Live like Adam 'Suns Out, Guns Out' Ramos! This tank might not help you get the ladies, but it will keep you cool while searching for a job!",
-            image: "tank.png",
-            category: categories[0]._id,
-            price: 19.99
-        },
+     
         {
             name: "WebDev Covid Mask",
             description: "Want to show off your webdev skills while still being socially responsible?  This mask has you covered!",

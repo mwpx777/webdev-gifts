@@ -96,10 +96,10 @@ function Detail() {
                     </div>
                     <div className="detail-row">
 
-                        <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} />
+                        <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} id="detailImage"/>
                         </div>
                         
-                        <div className="detail-row"><strong>Price: ${currentProduct.price}{" "}</strong>
+                        <div className="detail-row"><h2>Price: ${currentProduct.price}{" "}</h2>
                         <button onClick={addToCart}>
                             Add To Cart
                         </button>

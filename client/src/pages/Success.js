@@ -27,7 +27,7 @@ function Success() {
             // send to homepage after 3 seconds
             setTimeout(() => {
                 window.location.assign('/');
-            }, 3000);
+            }, 5000);
         }
         saveOrder();
     }, [addOrder]);
@@ -35,9 +35,11 @@ function Success() {
     return (
         <div>
             <Jumbotron>
+                <div className="successBackground">
                 <h1>Success!</h1>
                 <h2>Thank you for your purchase!</h2>
                 <h2>You will now be redirected to the home page</h2>
+                </div>
             </Jumbotron>
         </div>
     );
