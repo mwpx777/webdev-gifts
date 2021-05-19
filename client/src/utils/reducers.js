@@ -9,7 +9,8 @@ import {
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY,
     CLEAR_CART,
-    TOGGLE_CART
+    TOGGLE_CART,
+    TOGGLE_NAV
 } from "./actions";
 
 import {useReducer} from 'react'
@@ -75,6 +76,11 @@ export const reducer = (state, action) => {
                 ...state,
                 cartOpen: !state.cartOpen
             };
+        case TOGGLE_NAV:
+            return{
+                ...state,
+                navOpen: !state.navOpen
+            }
         default:
             return state;
     
