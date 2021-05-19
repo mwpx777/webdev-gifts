@@ -4,7 +4,7 @@
 export function idbPromise(storeName, method, object) {
     return new Promise((resolve, reject) => {
       // open connection to database `shop-shop` with version 1
-      const request = window.indexedDB.open('shop-shop', 1);
+      const request = window.indexedDB.open('webdev', 1);
   
       // create variables to hold referenece to the database, transaction (tx), and object store
       let db, tx, store;

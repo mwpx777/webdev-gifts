@@ -27,7 +27,7 @@ db.once('open', async () => {
             price: 24.99
         },
         {
-            name: "WebDev 2020-2021 baseball hat",
+            name: "WebDev 2020-2021 hat",
             description: "Sweet flat brim baseball hat with the official WebDev Logo!  Looks even better when worn backwards!",
             image:"baseball-hat.png",
             category: categories[1]._id,

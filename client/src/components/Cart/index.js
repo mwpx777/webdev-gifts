@@ -81,7 +81,7 @@ const Cart = () => {
         <div className="cart">
             <div className="close" onClick={toggleCart}>[close]</div>
             <h2>Shopping Cart</h2>
-            {state.cart.length ? (
+            {state.cart.length >= 1? (
                 <div>
                     {state.cart.map(item => (
                         <CartItem key={item._id} item={item} />
