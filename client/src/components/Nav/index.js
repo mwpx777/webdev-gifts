@@ -65,65 +65,64 @@ function Nav({ setCategory }) {
     function showNavigation() {
         if (Auth.loggedIn()) {
             return (
-                <ul className="flex-row">
+                <ul className=" flex-row-right">
+                     {categories.map(item => (
+                <button className="navButton" key={item._id}onClick={() => {handleClick(item._id);}}> {item.name}</button>))}
                     <li className="mx-1">
                         <Link to="/orderHistory">
-                            Order History
+                        <button className="navButton">   Order History</button>
                         </Link>
                     </li>
                     <li className="mx-1">
-                        <a href="/" onClick={() => Auth.logout()}>
+                        <button className="navButton" href="/" onClick={() => Auth.logout()}>
                             Logout
-                        </a>
+                        </button>
                     </li>
+                   
                 </ul>
             );
         } else {
             return (
-                <ul className="flex-row">
-                    <li className="mx-1">
+                <ul className=" flex-row-right">
+                     {categories.map(item => (
+                <button className="navButton" 
+                    key={item._id}
+                    onClick={() => {
+                        handleClick(item._id);
+                    }}> {item.name}</button>
+            ))}
+                    <button className="mx-1 navButton">
                         <Link to="/signup">
                             Signup
                         </Link>
-                    </li>
-                    <li className="mx-1">
+                    </button>
+                    <button className="mx-1 navButton">
                         <Link to="/login">
                             Login
                         </Link>
-                    </li>
+                    </button>
+                   
                 </ul>
             );
         }
     }
 
     return (
-        <header className="flex-row px-1 navHeader">
-            <h1>
-                <Link to="/">
-                    <img src={icon} id="icon"></img>
-                    2020-2021 WebDev Gifts
+        <header className="navHeader">
+            <h1 className="flex-row-right">
+                <Link to="/" className="flex-row-right">
+                    <img src={icon} className="roundicon" id="icon"></img>
+                    <span className="title">2020-2021 WebDev Gifts</span>
                 </Link>
-            </h1>
-            {/* <div id="mySidenav" className="sidenav"> */}
-            {/* <div id="navBar" onclick={openNav()} className="navBarChoices"> */}
+                </h1>
             <div id="navBar" className="navBarChoices">
                 {showNavigation()}
-                {/* {categories.map(item => (
-                <button
-                    key={item._id}
-                    onClick={() => {
-                        handleClick(item._id);
-                    }}> {item.name}</button>
-            ))} */}
             </div>
-            {/* </div> */}
-            <div id="mySidenav" className="sidenav">
-            <a href="javascript:void(0)" className="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
-            </div>
+
+            <p className="greeting">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+           
+
+            
         </header>
     );
 }
