@@ -226,6 +226,8 @@ button {
   left: 0; */
 }
 .navBar{
+  display: flex;
+  justify-content: space-between;
 
 }
 .navButton{
