@@ -94,13 +94,14 @@ function Detail() {
                     <div className="detail-row">
                         <p>{currentProduct.description}</p>
                     </div>
+
                     <div className="detail-row">
 
                         <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} />
                         </div>
                         
                         <div className="detail-row"><strong>Price: ${currentProduct.price}{" "}</strong>
-                        <button onClick={addToCart}>
+                        <button className="hvr-bounce-in" onClick={addToCart}>
                             Add To Cart
                         </button>
                         </div>
