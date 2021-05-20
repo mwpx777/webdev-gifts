@@ -52,9 +52,9 @@ function ProductItem(item) {
                         <div className="row">
                             <h5> ${price}</h5>
                         </div>
-                        <div className="row" id="btnRow">
+                        {/* <div className="row" id="btnRow">
                             <button id="addToCart" className="hvr-bounce-in" onClick={addToCart}>Add to cart!</button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

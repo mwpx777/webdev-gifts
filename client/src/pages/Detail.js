@@ -89,24 +89,21 @@ function Detail() {
 
     const handleSelect = (e) => {
         console.log(e.target.value);
-        if (e.target.value == 'none') {
-            alert("Please choose a size!");
 
-        } else {
-            setValue(e.target.value);
+        setValue(e.target.value);
 
 
-        }
     }
+
 
     return (
         <>
             {currentProduct ? (
                 <div className="container">
-                    <Link to="/">
-                        ← Back to Products
+                    <Link to="/" id="backLink">
+                        <span id="back"> ← Back to Products</span>
                 </Link>
-                    <div className="detail-row">
+                    <div className="detail-row animate__animated animate__lightSpeedInLeft">
                         <h1>{currentProduct.name}</h1>
                     </div>
                     <div className="detail-row">
@@ -114,14 +111,14 @@ function Detail() {
                     </div>
                     <div className="detail-row">
 
-                        <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} id="detailImage" />
+                        <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} id="detailImage" className="animate__animated animate__backInDown" />
                     </div>
                     {
                         currentProduct._id == "60a521d9d7ef887594599db7" || currentProduct._id == "60a521d9d7ef887594599db8" ?
                             (
-                                <div>
+                                <div className="detail-row">
                                     <h3>Choose a size </h3>
-                                    <select className="form-select" aria-label="Default select example" onChange={handleSelect} >
+                                    <select className="form-select" aria-label="Default select example" onChange={handleSelect} id="dropdown">
                                         <option value="Small">Small</option>
                                         <option value="Medium">Medium</option>
                                         <option value="Large">Large</option>
@@ -132,7 +129,7 @@ function Detail() {
                     }
 
                     <div className="detail-row"><h2>Price: ${currentProduct.price}{" "}</h2>
-                        <button onClick={addToCart}>
+                        <button className="hvr-pulse-grow"id="addToCartBtn" onClick={addToCart}>
                             Add To Cart
                         </button>
                     </div>

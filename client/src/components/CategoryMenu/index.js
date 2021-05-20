@@ -40,9 +40,6 @@ function CategoryMenu({ setCategory }) {
 
     return (
         <div id="categoryButtons">
-            {/* <div id="categories" className="animate__animated animate__fadeInLeftBig">
-                <h2> Categories</h2>
-            </div> */}
             {categories.map(item => (
                 <button
                     id="catBtn"
