@@ -48,7 +48,7 @@ const CartItem = ({ item }) => {
                 <div>{item.name} </div>
                 <div>${item.price}</div>
                 {
-                    item.name == "WebDev 2020-2021 tank" || item.name =="WebDev 2020-2021 tshirt" ?
+                    item.name == "WebDev 2020-2021 Tank" || item.name =="WebDev 2020-2021 Tshirt" ?
                     (
                 <div>Size: {item.size}</div>
                     ) : null
