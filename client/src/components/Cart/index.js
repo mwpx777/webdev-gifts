@@ -112,7 +112,7 @@ const Cart = () => {
             ) : (
                 <h3>
 
-                    Your cart is empty! Go buy some stuff!
+                    Your cart is empty! Go add some stuff!
                 </h3>
             )}
         </div>

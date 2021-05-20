@@ -120,6 +120,7 @@ button {
 #icon {
   width: 5rem;
   margin-right: 1rem;
+  filter: drop-shadow(5px 5px 4px rgb(61, 61, 61));
 }
 
 #cards{
