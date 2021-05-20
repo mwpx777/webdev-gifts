@@ -20,15 +20,15 @@ db.once('open', async () => {
 
     const products = await Product.insertMany([
         {
-            name: "WebDev 2020-2021 tshirt",
-            description: "Official WebDev 2020-2021 Tshirt.  Celebrate your triumph in completing the WebDev course, and pay tribute to your fallen classmates that did not finish!",
+            name: "WebDev 2020-2021 Tshirt",
+            description: "Official WebDev 2020-2021 Tshirt.  Celebrate your triumph in completing the WebDev course while paying tribute to your fallen classmates!",
             image: "tshirt.png",
             category: categories[0]._id,
             price: 24.99
         },
         {
-            name: "WebDev 2020-2021 tank",
-            description: "Live like Adam `Suns Out, Guns Out` Ramos! This tank might not help you get the ladies, but it will keep you cool while searching for a job! **MUST BE 18 TO PURCHASE!!**",
+            name: "WebDev 2020-2021 Tank",
+            description: "Live like Adam `Suns Out, Guns Out` Ramos! This tank might not help you get the ladies, but it will keep you cool while searching for a job!  **MUST BE 18 TO PURCHASE!!**",
             image: "tank.png",
             category: categories[0]._id,
             price: 14.99
@@ -71,14 +71,14 @@ db.once('open', async () => {
         },
         {
             name: "WebDev sticker",
-            description: "Slap this on your car to help forget about the fact you are too poor to afford a Tesla!",
+            description: "Slap this on your car to help you forget about the fact you are too poor to afford a Tesla!",
             image:"sticker.png",
             category: categories[3]._id,
             price: 1.99
         },
         {
             name: "WebDev beanie",
-            description: "Perfect for wearing when rolling through Compton or on a cold winter's day.",
+            description: "Perfect for wearing when rolling through Compton...or on a cold winter's day.",
             image:"beanie.png",
             category: categories[1]._id,
             price: 10.99
