@@ -23,8 +23,10 @@ function Nav({ setCategory }) {
     function scrollFn() {
         if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 75) {
             document.getElementById("navBar").setAttribute("class", "endState")
+            document.getElementById("navBarItems").setAttribute("class", "displaynone")
         }else {
             document.getElementById("navBar").setAttribute("class", "initialState")
+            document.getElementById("navBarItems").setAttribute("class", "flex-row-right")
         }
     }
     useEffect(() => {
@@ -65,7 +67,7 @@ function Nav({ setCategory }) {
     function showNavigation() {
         if (Auth.loggedIn()) {
             return (
-                <ul className=" flex-row-right">
+                <ul id="navBarItems" className=" flex-row-right">
                      {categories.map(item => (
                 <button className="navButton" key={item._id}onClick={() => {handleClick(item._id);}}> {item.name}</button>))}
                     <li className="mx-1">
@@ -83,7 +85,7 @@ function Nav({ setCategory }) {
             );
         } else {
             return (
-                <ul className=" flex-row-right">
+                <ul id="navBarItems" className=" flex-row-right">
                      {categories.map(item => (
                 <button className="navButton" 
                     key={item._id}
