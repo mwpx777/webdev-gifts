@@ -114,7 +114,7 @@ function Detail() {
                         <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} id="detailImage" className="animate__animated animate__backInDown" />
                     </div>
                     {
-                        currentProduct._id == "60a6d1c0ef7d2f4f8810a829" || currentProduct._id == "60a6d1c0ef7d2f4f8810a82a" ?
+                        currentProduct._id == "60a6f97604860b499ce41857" || currentProduct._id == "60a6f97604860b499ce41856" ?
                             (
                                 <div className="detail-row">
                                     <h3>Choose a size </h3>
