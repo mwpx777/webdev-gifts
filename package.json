@@ -4,12 +4,16 @@
   "main": "server/server.js",
   "dependencies": {
     "@stripe/stripe-js": "^1.14.0",
+    "bootstrap": "^5.0.1",
     "graphql": "^15.5.0",
     "hover.css": "^2.3.2",
     "if-env": "^1.0.4",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.6.0",
+    "react-bootstrap-dropdown": "^0.3.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
     "stripe": "^8.148.0",
     "web-vitals": "^1.1.2"
   },

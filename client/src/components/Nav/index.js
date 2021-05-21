@@ -2,7 +2,7 @@
 
 import Auth from '../../utils/auth';
 import { Link } from "react-router-dom";
-import icon from '../../assets/icon.png'
+import icon from '../../assets/WebDev logo.png'
 
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';

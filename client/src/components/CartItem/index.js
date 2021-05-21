@@ -4,6 +4,7 @@ import React from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
+import { isTypeExtensionNode } from 'graphql';
 
 const CartItem = ({ item }) => {
     const [, dispatch] = useStoreContext();
@@ -38,14 +39,22 @@ const CartItem = ({ item }) => {
     };
 
     return (
-        <div className="flex-row">
+        <div className="flex-row" >
             <div>
-                <img src={`/images/${item.image}`} alt={item.name} />
+                <img src={`/images/${item.image}`} alt={item.name} id="cartImage" />
             </div>
             <div>
-                <div>{item.name}, ${item.price}</div>
+                
+                <div>{item.name} </div>
+                <div>${item.price}</div>
+                {
+                    item.name == "WebDev 2020-2021 Tank" || item.name =="WebDev 2020-2021 Tshirt" ?
+                    (
+                <div>Size: {item.size}</div>
+                    ) : null
+                }
                 <div>
-                    <span>Quantity:</span>
+                    <span>Quantity: </span>
                     <input
                         type="number"
                         placeholder="1"
@@ -54,7 +63,8 @@ const CartItem = ({ item }) => {
                     <span
                         onClick={() => removeFromCart(item)}
                         role="img"
-                        aria-label="trash">
+                        aria-label="trash"
+                        id="trashCan">
                         🗑️
                 </span>
                 </div>

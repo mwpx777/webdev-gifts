@@ -30,55 +30,66 @@ function Signup(props) {
     };
 
     return (
-        <div className="container my-1">
-            <Link to='/login'>
+        <>
+            {/* <Link to='/login'>
             ← Go to Login
-            </Link>
+            </Link> */}
+        <div className="container my-1"id="signCard">
+           
+            <div className="card-header">
             <h2>Signup</h2>
+            </div>
+            <div className="card-body">
             <form onSubmit={handleFormSubmit}>
-                <div className="flex-row space-between my-2">
+                <div className="row  my-2" id="signup-form">
                     <label htmlFor="firstName">First Name: </label>
                     <input
-                    placeholder="First"
+                    // placeholder="First"
+                    className="input"
                     name="firstName"
                     type="firstName"
                     id="firstName"
                     onChange={handleChange} />
                 </div>
-                <div className="flex-row space-between my-2">
+                <div className="row my-2" id="signup-form">
                     <label htmlFor="lastName">Last Name: </label>
                     <input
-                    placeholder="Last"
+                    // placeholder="Last"
+                    className="input"
                     name="lastName"
                     type="lastName"
                     id="lastName"
                     onChange={handleChange} />
                 </div>
-                <div className="flex-row space-between my-2">
+                <div className="row  my-2" id="signup-form">
                     <label htmlFor="email">Email: </label>
                     <input
-                    placeholder="name@email.com"
+                    // placeholder="name@email.com"
+                    className="input"
                     name="email"
                     type="email"
-                    id="emaiol"
+                    id="email"
                     onChange={handleChange} />
                 </div>
-                <div className="flex-row space-between my-2">
+                <div className="row  my-2" id="signup-form">
                     <label htmlFor="firstName">Password: </label>
                     <input
-                    placeholder="********"
+                    // placeholder="********"
+                    className="input"
                     name="password"
                     type="password"
                     id="pwd"
                     onChange={handleChange} />
                 </div>
-                <div className="flex-row flex-end">
-                    <button type="submit">
+                <div className="row flex-end">
+                    <button type="submit" id="submitBtn">
                         Submit
                     </button>
                 </div>
             </form>
+            </div>
         </div>
+        </>
         );
 };
 
