@@ -8,6 +8,7 @@ import spinner from '../assets/spinner.gif'
 import { useStoreContext } from '../utils/GlobalState';
 import Cart from '../components/Cart';
 import { idbPromise } from '../utils/helpers';
+
 import {
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY,
@@ -21,6 +22,7 @@ function Detail() {
     const [currentProduct, setCurrentProduct] = useState({});
     const { loading, data } = useQuery(QUERY_PRODUCTS);
     const { products, cart } = state;
+    const [value, setValue] = useState('');
 
     const addToCart = () => {
         const itemInCart = cart.find((cartItem) => cartItem._id === id);
@@ -29,6 +31,7 @@ function Detail() {
             dispatch({
                 type: UPDATE_CART_QUANTITY,
                 _id: id,
+
                 purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
             });
 
@@ -39,7 +42,8 @@ function Detail() {
         } else {
             dispatch({
                 type: ADD_TO_CART,
-                product: { ...currentProduct, purchaseQuantity: 1 }
+
+                product: { ...currentProduct, purchaseQuantity: 1, size: value, }
             });
             idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
         };
@@ -55,10 +59,12 @@ function Detail() {
     useEffect(() => {
         // products already in globalStore
         if (products.length) {
+            console.log((products.find(product => product._id === id)))
             setCurrentProduct(products.find(product => product._id === id));
 
             // retrieved from server
         } else if (data) {
+
             dispatch({
                 type: UPDATE_PRODUCTS,
                 products: data.products
@@ -81,32 +87,54 @@ function Detail() {
     }, [products, data, loading, dispatch, id]);
 
 
+    const handleSelect = (e) => {
+        console.log(e.target.value);
+
+        setValue(e.target.value);
+
+
+    }
+
+
     return (
         <>
             {currentProduct ? (
                 <div className="container">
-                    <Link to="/">
-                        ← Back to Products
+                    <Link to="/" id="backLink">
+                        <span id="back"> ← Back to Products</span>
                 </Link>
-                    <div className="detail-row">
+                    <div className="detail-row animate__animated animate__lightSpeedInLeft">
                         <h1>{currentProduct.name}</h1>
                     </div>
                     <div className="detail-row">
                         <p>{currentProduct.description}</p>
                     </div>
-
                     <div className="detail-row">
 
-                        <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} />
-                        </div>
-                        
-                        <div className="detail-row"><strong>Price: ${currentProduct.price}{" "}</strong>
-                        <button className="hvr-bounce-in" onClick={addToCart}>
+                        <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} id="detailImage" className="animate__animated animate__backInDown" />
+                    </div>
+                    {
+                        currentProduct._id == "60a6d1c0ef7d2f4f8810a829" || currentProduct._id == "60a6d1c0ef7d2f4f8810a82a" ?
+                            (
+                                <div className="detail-row">
+                                    <h3>Choose a size </h3>
+                                    <select className="form-select" aria-label="Default select example" onChange={handleSelect} id="dropdown">
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large">Large</option>
+                                        <option value="XL">XL</option>
+                                    </select>
+                                </div>
+                            ) : null
+                    }
+
+                    <div className="detail-row"><h2>Price: ${currentProduct.price}{" "}</h2>
+                        <button className="hvr-pulse-grow"id="addToCartBtn" onClick={addToCart}>
                             Add To Cart
                         </button>
-                        </div>
                     </div>
-               
+                </div>
+
             ) : null}
             {
                 loading ? <img src={spinner} alt="loading spinner" /> : null
@@ -115,4 +143,5 @@ function Detail() {
         </>
     );
 };
+
 export default Detail;

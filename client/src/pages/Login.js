@@ -29,26 +29,31 @@ function Login(props) {
     };
 
     return (
-        <div className="container my-1">
-            <Link to="/signup">
+        <>
+            {/* <Link to="/signup">
                 ← Go to Signup
-            </Link>
-
+            </Link> */}
+        <div className="container my-1" id="signCard">
+            <div className="card-header">
             <h2> Login</h2>
+            </div>
+            <div className="card-body">
             <form onSubmit={handleFormSubmit}>
-                <div className="flex-row space-between my-2">
+                <div className="row my-2" id="signup-form">
                     <label htmlFor="email">Email address:</label>
                     <input
-                        placeholder="name@email.com"
+                        // placeholder="name@email.com"
+                        className="input"
                         name="email"
                         type="email"
                         id="email"
                         onChange={handleChange} />
                 </div>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="pwd">Password</label>
+                <div className="row my-2" id="signup-form">
+                    <label htmlFor="pwd">Password: </label>
                     <input
-                        placeholder="********"
+                        // placeholder="********"
+                        className="input"
                         name="password"
                         type="password"
                         id="password"
@@ -61,12 +66,14 @@ function Login(props) {
                         </div> : null
                 }
                 <div className="flex-row flex-end">
-                    <button type="submit">
+                    <button type="submit" id="submitBtn">
                         Submit
                     </button>
                 </div>
             </form>
         </div>
+        </div>
+        </>
     );
 };
 

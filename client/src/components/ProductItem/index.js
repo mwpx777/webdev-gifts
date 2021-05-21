@@ -43,15 +43,22 @@ function ProductItem(item) {
             <Link to={`/products/${_id}`}>
                 <img src={`/images/${image}`} alt={name} id="cardImage" />
             </Link>
-            <div className="cardContainer">
-                <div className="cardTitle">
-                    <h4><b>{name} ${price}</b></h4>
-                    <span></span>
-                    <button  className="hvr-bounce-in" onClick={addToCart}>Add to cart!</button>
+            <div className="container">
+                <div className="row">
+                    <div className="cardTitle">
+                        <div className="row">
+                            <h5>{name} </h5>
+                        </div>
+                        <div className="row">
+                            <h5> ${price}</h5>
+                        </div>
+                        {/* <div className="row" id="btnRow">
+                            <button id="addToCart" className="hvr-bounce-in" onClick={addToCart}>Add to cart!</button>
+                        </div> */}
+                    </div>
                 </div>
             </div>
-        </div>
-
+</div>
 
 
     );
