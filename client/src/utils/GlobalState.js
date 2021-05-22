@@ -14,18 +14,9 @@ const StoreProvider = ({value= [], ...props}) => {
         cartOpen: false,
         categories: [],
         currentCategory: '',
-        navOpen:false
     });
     return <Provider value = {[state, dispatch]} {...props} />
 };
-const ResetCat =({value= [], ...props}) =>{
-    const [state, dispatch] = useProductReducer({
-        categories: []
-
-    });
-    return <Provider value = {[state, dispatch]} {...props} />
-};
-
 
 
 // when this function runs within a component, will receive [state, dispatch] date the StoreProvier manages
@@ -33,4 +24,4 @@ const useStoreContext = () => {
     return useContext(StoreContext);
 };
 
-export {StoreProvider, useStoreContext,ResetCat};
+export {StoreProvider, useStoreContext};
