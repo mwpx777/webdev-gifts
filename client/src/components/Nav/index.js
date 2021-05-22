@@ -1,38 +1,40 @@
-// NAVBAR
-
-import Auth from '../../utils/auth';
-import { Link } from "react-router-dom";
-import icon from '../../assets/WebDev logo.png'
-
 import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { Link } from "react-router-dom";
+
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { TOGGLE_NAV, UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
+import { useQuery } from '@apollo/react-hooks';
 import { useStoreContext } from '../../utils/GlobalState';
+// NAVBAR
+
 import { idbPromise } from '../../utils/helpers';
+import Auth from '../../utils/auth';
+import icon from '../../assets/WebDev logo.png'
+
 
 //Scroll Feature
 function Nav({ setCategory }) {
     const [state, dispatch] = useStoreContext();
     const { categories } = state;
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
-
-    window.onscroll = function(){
-        scrollFn()
-    }
-    function scrollFn() {
-        if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 75) {
-            document.getElementById("navBar").setAttribute("class", "endState")
-            document.getElementById("navBarItems").setAttribute("class", "displaynone")
-            document.getElementById("navTitle").setAttribute("class", "displayhidden")
-            document.getElementById("navGreeting").setAttribute("class", "displayhidden")
-        }else {
-            document.getElementById("navBar").setAttribute("class", "initialState")
-            document.getElementById("navBarItems").setAttribute("class", "flex-row-right")
-            document.getElementById("navTitle").setAttribute("class", "flex-row-right")
-            document.getElementById("navGreeting").setAttribute("class", "greeting")
-        }
-    }
+    
+   
+    // window.onscroll = function(){
+    //     scrollFn()
+    // }
+    // function scrollFn() {
+    //     if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 75) {
+    //         document.getElementById("navBar").setAttribute("class", "endState")
+    //         document.getElementById("navBarItems").setAttribute("class", "displaynone")
+    //         document.getElementById("navTitle").setAttribute("class", "displayhidden")
+    //         document.getElementById("navGreeting").setAttribute("class", "displayhidden")
+    //     }else {
+    //         document.getElementById("navBar").setAttribute("class", "initialState")
+    //         document.getElementById("navBarItems").setAttribute("class", "flex-row-right")
+    //         document.getElementById("navTitle").setAttribute("class", "flex-row-right")
+    //         document.getElementById("navGreeting").setAttribute("class", "greeting")
+    //     }
+    // }
     useEffect(() => {
         if (categoryData) {
             dispatch({
@@ -58,10 +60,15 @@ function Nav({ setCategory }) {
             currentCategory: id
         });
     };
+    const resetCat=()=>{
+        dispatch({
+            type:UPDATE_CURRENT_CATEGORY,
+            currentCategory: null
+        });
+    };
 
 
-
-let isNavOpen=()=> {
+function isNavOpen(){
 
         var test = document.getElementById("navBar");
 if(test.classList.contains("endState")){
@@ -70,7 +77,7 @@ if(test.classList.contains("endState")){
 if(test.classList.contains("initialState")){
     console.log("closed")
 }
-
+}
 
 
 // switch (test) {
@@ -86,7 +93,7 @@ if(test.classList.contains("initialState")){
 //     test.innerHTML = "";
 // }
 
-    } 
+    // } 
 
     // function toggleNav(){
     //     dispatch({type:TOGGLE_NAV});
@@ -159,11 +166,13 @@ if(test.classList.contains("initialState")){
             );
         }
     }
-isNavOpen()
     return (
         <header id="navHeader" className="navHeader">
             <h1 id="navTitle"className="flex-row-right">
-                <Link to="/" className="flex-row-right">
+                <Link to="/" 
+                    onClick={() => {
+                        resetCat();
+                    }} className="flex-row-right">
                     <img src={icon} className="roundicon" alt="web dev logo"id="icon"></img>
                     <span className="title">2020-2021 WebDev Gifts</span>
                 </Link>

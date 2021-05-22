@@ -18,10 +18,19 @@ const StoreProvider = ({value= [], ...props}) => {
     });
     return <Provider value = {[state, dispatch]} {...props} />
 };
+const ResetCat =({value= [], ...props}) =>{
+    const [state, dispatch] = useProductReducer({
+        categories: []
+
+    });
+    return <Provider value = {[state, dispatch]} {...props} />
+};
+
+
 
 // when this function runs within a component, will receive [state, dispatch] date the StoreProvier manages
 const useStoreContext = () => {
     return useContext(StoreContext);
 };
 
-export {StoreProvider, useStoreContext};
+export {StoreProvider, useStoreContext,ResetCat};
