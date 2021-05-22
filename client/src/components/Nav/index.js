@@ -28,10 +28,12 @@ function Nav({ setCategory }) {
             document.getElementById("navBarItems").setAttribute("class", "displaynone")
             document.getElementById("navTitle").setAttribute("class", "displayhidden")
             document.getElementById("navGreeting").setAttribute("class", "displayhidden")
+            document.getElementById("closedCartBubble").setAttribute("class", "cart-closed2")
         }else {
             document.getElementById("navBar").setAttribute("class", "initialState")
             document.getElementById("navBarItems").setAttribute("class", "navBarItems")
             document.getElementById("navTitle").setAttribute("class", "navTitle")
+            document.getElementById("closedCartBubble").setAttribute("class", "cart-closed ")
             // document.getElementById("navGreeting").setAttribute("class", "greeting")
         }
     }
@@ -147,7 +149,7 @@ function Nav({ setCategory }) {
             </div>
             {/* Greeting Below */}
         <div id="holder" className="holder">
-            <p id="navGreeting" className="greeting">Congrats you did IT! It was a crazy 6 Months but you are a full stack Developer.
+            <p id="navGreeting" className="greeting">Congrats! It was a crazy 6 Months but you are now a Full Stack Developer.
             <br></br> Now get yourself some new gear to sport your accomplishments.</p>
         </div>
         </header>

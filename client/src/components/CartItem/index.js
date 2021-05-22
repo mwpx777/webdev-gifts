@@ -39,23 +39,24 @@ const CartItem = ({ item }) => {
     };
 
     return (
-        <div className="flex-row" >
+        <div className="flex-row allCart" >
             <div>
                 <img src={`/images/${item.image}`} alt={item.name} id="cartImage" />
             </div>
             <div>
                 
-                <div>{item.name} </div>
-                <div>${item.price}</div>
+                <div className="allCart">{item.name} </div>
+                <div className="allCart">${item.price}</div>
                 {
                     item.name == "WebDev 2020-2021 Tank" || item.name =="WebDev 2020-2021 Tshirt" ?
                     (
-                <div>Size: {item.size}</div>
+                <div className="allCart">Size: {item.size}</div>
                     ) : null
                 }
                 <div>
-                    <span>Quantity: </span>
+                    <span className="allCart">Quantity: </span>
                     <input
+                    className="allCart"
                         type="number"
                         placeholder="1"
                         value={item.purchaseQuantity}
