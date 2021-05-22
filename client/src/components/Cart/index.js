@@ -6,7 +6,8 @@ import Auth from '../../utils/auth';
 import './styles.css';
 // useLazyQuery will only run when calles upon
 import { useLazyQuery } from '@apollo/react-hooks'
-
+// was trying to change the cart image below
+// import cartimg from '../../assets/fastcart.png'
 // this will establish a state variable
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';

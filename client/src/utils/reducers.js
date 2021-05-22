@@ -9,8 +9,7 @@ import {
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY,
     CLEAR_CART,
-    TOGGLE_CART,
-    TOGGLE_NAV
+    TOGGLE_CART
 } from "./actions";
 
 import {useReducer} from 'react'

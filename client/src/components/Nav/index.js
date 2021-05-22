@@ -30,8 +30,8 @@ function Nav({ setCategory }) {
             document.getElementById("navGreeting").setAttribute("class", "displayhidden")
         }else {
             document.getElementById("navBar").setAttribute("class", "initialState")
-            document.getElementById("navBarItems").setAttribute("class", "flex-row-right")
-            document.getElementById("navTitle").setAttribute("class", "flex-row-right")
+            document.getElementById("navBarItems").setAttribute("class", "navBarItems")
+            document.getElementById("navTitle").setAttribute("class", "navTitle")
             // document.getElementById("navGreeting").setAttribute("class", "greeting")
         }
     }
@@ -86,11 +86,12 @@ function Nav({ setCategory }) {
     function showNavigation() {
         if (Auth.loggedIn()) {
             return (
-                <div id="navBarItems" className=" flex-row-right">
+                <div id="navBarItems" className="navBarItems">
+                    {/* Maps the Categories in the Nav Bar */}
                      {categories.map(item => (
-                <button className="navButton" key={item._id}onClick={() => {handleClick(item._id);}}> {item.name}</button>))}
-                   
-                        <Link className="navButton" to="/orderHistory">
+                     <button className="navButton" key={item._id}onClick={() => {handleClick(item._id);}}> {item.name}</button>))}
+                     {/* Link to Order History and Logout */}
+                    <Link className="navButton" to="/orderHistory">
                         <button className="navButton">   Order History</button>
                         </Link>
                         <button className="navButton" href="/" onClick={() => Auth.logout()}>
@@ -101,7 +102,8 @@ function Nav({ setCategory }) {
         } else {
             //Else If not LoggedIn then...
             return (
-                <ul id="navBarItems" className=" flex-row-right">
+                <div id="navBarItems" className="navBarItems">
+                     {/* Maps the Categories in the Nav Bar */}
                      {categories.map(item => (
                 <button className="navButton" 
                     key={item._id}
@@ -109,6 +111,7 @@ function Nav({ setCategory }) {
                         handleClick(item._id);
                     }}> {item.name}</button>
             ))}
+                     {/* Link to Signup and Login */}
                     <button className="mx-1 navButton">
                         <Link className="navButton"to="/signup">
                             Signup
@@ -120,7 +123,7 @@ function Nav({ setCategory }) {
                         </Link>
                     </button>
                    
-                </ul>
+                </div>
             );
         }
     }
@@ -128,22 +131,22 @@ function Nav({ setCategory }) {
     return (
         <header id="navHeader" className="navHeader">
             {/* Title Bar and Logo */}
-            <h1 id="navTitle"className="flex-row-right">
+            <div id="navTitle"className="navTitle">
                 <Link to="/" 
                     onClick={() => {
                         resetCat();
-                    }} className="flex-row-right">
+                    }} className="navLogo">
                     <img src={icon} className="roundicon" alt="web dev logo"id="icon"></img>
                     <span className="title">2020-2021 WebDev Gifts</span>
                 </Link>
-            </h1>
+            </div>
             {/* End OF Title Bar */}
             {/* Nav Bar Items and If/Else Code from Above */}
             <div id="navBar" onClick={()=>{isNavOpen()}} className="navBarChoices">
                 {showNavigation()}
             </div>
             {/* Greeting Below */}
-        <div id="holder">
+        <div id="holder" className="holder">
             <p id="navGreeting" className="greeting">Congrats you did IT! It was a crazy 6 Months but you are a full stack Developer.
             <br></br> Now get yourself some new gear to sport your accomplishments.</p>
         </div>
