@@ -18,7 +18,7 @@ function Nav({ setCategory }) {
     const { categories } = state;
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
     
-   
+   // ON Scroll feature for Nav Bar
     window.onscroll = function(){
         scrollFn()
     }
@@ -35,6 +35,7 @@ function Nav({ setCategory }) {
             // document.getElementById("navGreeting").setAttribute("class", "greeting")
         }
     }
+    //  Use Effect for Categories Filter to Display on Nav 
     useEffect(() => {
         if (categoryData) {
             dispatch({
@@ -53,13 +54,16 @@ function Nav({ setCategory }) {
             });
         }
     }, [loading, categoryData, dispatch]);
-
+    
+    //Updates Filters on Products Displayed
     const handleClick = id => {
         dispatch({
             type: UPDATE_CURRENT_CATEGORY,
             currentCategory: id
         });
     };
+
+    //Resets all the Filters after its Click on
     const resetCat=()=>{
         dispatch({
             type:UPDATE_CURRENT_CATEGORY,
@@ -67,23 +71,18 @@ function Nav({ setCategory }) {
         });
     };
 
+    //Opens Nav If its in the closed postion ONLY!
+    function isNavOpen(){
+        var test = document.getElementById("navBar")
 
-function isNavOpen(){
- 
-    var test = document.getElementById("navBar")
+        if(test.classList.contains("endState")){
+            console.log("closed")
+            document.getElementById("navBar").setAttribute("class", "initialState2")
+            document.getElementById("navBarItems").setAttribute("class", "flex-row-right2")
+        }
+    }
 
-if(test.classList.contains("endState")){
-    console.log("closed")
-    document.getElementById("navBar").setAttribute("class", "initialState2")
-    document.getElementById("navBarItems").setAttribute("class", "flex-row-right2")
-
-}
-else{
-    console.log("open")
-}
-}
-
-
+    //  Generates the NavBar LoggedIn Items Or not if not LoggedIN
     function showNavigation() {
         if (Auth.loggedIn()) {
             return (
@@ -100,6 +99,7 @@ else{
                 </div>
             );
         } else {
+            //Else If not LoggedIn then...
             return (
                 <ul id="navBarItems" className=" flex-row-right">
                      {categories.map(item => (
@@ -124,8 +124,10 @@ else{
             );
         }
     }
+    // Main Body Returned
     return (
         <header id="navHeader" className="navHeader">
+            {/* Title Bar and Logo */}
             <h1 id="navTitle"className="flex-row-right">
                 <Link to="/" 
                     onClick={() => {
@@ -134,16 +136,16 @@ else{
                     <img src={icon} className="roundicon" alt="web dev logo"id="icon"></img>
                     <span className="title">2020-2021 WebDev Gifts</span>
                 </Link>
-                </h1>
+            </h1>
+            {/* End OF Title Bar */}
+            {/* Nav Bar Items and If/Else Code from Above */}
             <div id="navBar" onClick={()=>{isNavOpen()}} className="navBarChoices">
                 {showNavigation()}
             </div>
+            {/* Greeting Below */}
         <div id="holder">
-            <div class="firework" id="firework2"></div>
-
             <p id="navGreeting" className="greeting">Congrats you did IT! It was a crazy 6 Months but you are a full stack Developer.
             <br></br> Now get yourself some new gear to sport your accomplishments.</p>
-            <div class="firework" id="firework1"></div>
         </div>
         </header>
     );
