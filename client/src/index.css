@@ -530,7 +530,7 @@ button {
 .greeting{
   display: flex;
   color: white;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   text-align: center;
   align-content: center;
   justify-content: center;
@@ -554,12 +554,453 @@ button {
   width: 100%;
 }
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-width: 450px) {
+
+@media screen and (max-width: 1024px) {
+  * {
+   font-size:.8rem;
+ }
+ body {
+   background-size:cover;
+   background-position: 55% 0;
+   width: 90%;
+ }
+ .navHeader{
+   margin-bottom: .5rem;
+   height: 80%;
+ }
+ .navTitle{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: center;
+   margin-left: 7rem;
+ }
+ .navLogo{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content:space-between;
+   margin-left: 3rem;
+ }
+ .title{
+   display: flex;
+  
+   flex-wrap: nowrap;
+   margin-left: 2rem;
+   width: 100%;
+   margin-top: 10px;
+   /* margin-bottom: 3rem; */
+   font-size: 4rem;
+   padding-right: 11rem;
+   margin-right: 2rem;
+   text-align: center;
+ }
+ #icon{
+  width: 8rem;
+  
+ }
+ .allCart{
+ font-size: 20px;
+ }
+ .endState {
+   top: 10%;
+   left: 72%;
+   width: 15%;
+   height: 8%;
+   z-index: 1;
+ }
+ .initialState {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   top: 11rem;
+   left: 0;
+   width: 100%;
+   /* height: 3rem; */
+   transition: .5s;
+   z-index: 1;
+   height: 150px;
+   padding-right: 2rem;
+ }
+ .holder{
+   margin-top: 3rem;
+ }
+ #navGreeting{
+   font-size: 1.6rem;
+   padding: 10px;
+ }
+ .initialState2 {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   padding: 20px 20px 20px 0;
+
+   justify-content: center;
+   top: 6rem;
+   left: 1rem;
+   width: 100%;
+   z-index: 1;
+   height: 90px;
+ }
+ .navBarItems{
+   display: flex;
+   flex-direction:row ;
+   align-content: center;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   margin: 0 3px;
+   padding: 2rem;
+   width: 90%;
+   height: 200px;
+   margin-left: 4px;
+   
+ }
+ .navButton{
+   display: flex;
+   flex-direction: row;
+   /* flex-wrap: nowrap; */
+   margin: 5px 6px;
+   padding: 0;
+   line-height: 90%;
+   font-size: 2.5rem;
+
+
+ }
+ .navBarChoices{
+   /* margin-left: 1rem; */
+   width: 100%;
+   height: 100px;
+ }
+ .greeting{
+   font-size: 2rem;
+ }
+ 
+ .cart-closed2{
+   top: 9%;
+   left: 1%;
+
+ }
+ h5{
+   font-size: 2rem;
+ }
+footer{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+}
+
+
+ }
+
+@media screen and (max-width: 768px) {
+  * {
+   font-size:.8rem;
+ }
+ body {
+   background-size:cover;
+   background-position: 55% 0;
+   width: 100%;
+ }
+ .navHeader{
+   margin-bottom: .5rem;
+   height: 80%;
+ }
+ .navTitle{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: center;
+   margin-left: 7rem;
+ }
+ .navLogo{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content:space-between;
+   margin-left: 3rem;
+ }
+ .title{
+   display: flex;
+  
+   flex-wrap: nowrap;
+   margin-left: 2rem;
+   width: 100%;
+   margin-top: 10px;
+   /* margin-bottom: 3rem; */
+   font-size: 4rem;
+   padding-right: 11rem;
+   margin-right: 2rem;
+   text-align: center;
+ }
+ #icon{
+  width: 8rem;
+  
+ }
+ .allCart{
+ font-size: 20px;
+ }
+ .endState {
+   top: 10%;
+   left: 72%;
+   width: 15%;
+   height: 8%;
+   z-index: 1;
+ }
+ .initialState {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   top: 11rem;
+   left: 0;
+   width: 100%;
+   /* height: 3rem; */
+   transition: .5s;
+   z-index: 1;
+   height: 150px;
+   padding-right: 2rem;
+ }
+ .holder{
+   margin-top: 3rem;
+ }
+ #navGreeting{
+   font-size: 1.6rem;
+   padding: 10px;
+ }
+ .initialState2 {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   padding: 20px 20px 20px 0;
+
+   justify-content: center;
+   top: 6rem;
+   left: 1rem;
+   width: 100%;
+   z-index: 1;
+   height: 90px;
+ }
+ .navBarItems{
+   display: flex;
+   flex-direction:row ;
+   align-content: center;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   margin: 0 3px;
+   padding: 2rem;
+   width: 90%;
+   height: 200px;
+   margin-left: 4px;
+   
+ }
+ .navButton{
+   display: flex;
+   flex-direction: row;
+   /* flex-wrap: nowrap; */
+   margin: 5px 6px;
+   padding: 0;
+   line-height: 90%;
+   font-size: 2.5rem;
+
+
+ }
+ .navBarChoices{
+   /* margin-left: 1rem; */
+   width: 100%;
+   height: 100px;
+ }
+ .greeting{
+   font-size: 2rem;
+ }
+ /* #closedCartBubble {
+   position: fixed;
+   top: 9%;
+   left: 1%;
+   font-size: 2rem;
+  
+ } */
+ .cart-closed2{
+   top: 9%;
+   left: 1%;
+
+ }
+ h5{
+   font-size: 2rem;
+ }
+footer{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+}
+
+
+ }
+
+@media screen and (max-width: 414px) {
+  * {
+   font-size:.8rem;
+ }
+ body {
+   background-size:cover;
+   background-position: 55% 0;
+   width: 100%;
+ }
+ .navHeader{
+   margin-bottom: .5rem;
+   height: 80%;
+ }
+ .navTitle{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: center;
+   margin-left: 3rem;
+ }
+ .navLogo{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content:space-between;
+   margin-left: 3rem;
+ }
+ .title{
+   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+   flex-wrap: nowrap;
+   margin-left: 2rem;
+   width: 100%;
+   margin-top: 10px;
+   /* margin-bottom: 3rem; */
+   font-size: 1.4rem;
+   padding-right: 6rem;
+   margin-right: 2rem;
+ }
+ #icon{
+  
+   width: 5rem;
+ }
+ .allCart{
+ font-size: 20px;
+ }
+ .endState {
+   top: 10%;
+   left: 72%;
+   width: 15%;
+   height: 8%;
+   z-index: 1;
+ }
+ .initialState {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   top: 4rem;
+   left: 0;
+   width: 100%;
+   /* height: 3rem; */
+   transition: .5s;
+   z-index: 1;
+   height: 150px;
+   padding-right: 2rem;
+ }
+ .holder{
+   margin-top: 3rem;
+ }
+ #navGreeting{
+   font-size: 1.6rem;
+   padding: 10px;
+ }
+ .initialState2 {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   padding: 20px 20px 20px 0;
+
+   justify-content: center;
+   top: 6rem;
+   left: 1rem;
+   width: 100%;
+   z-index: 1;
+   height: 90px;
+ }
+ .navBarItems{
+   display: flex;
+   flex-direction:row ;
+   align-content: center;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   margin: 0 3px;
+   padding: 2rem;
+   width: 90%;
+   height: 200px;
+   margin-left: 4px;
+   
+ }
+ .navButton{
+   display: flex;
+   flex-direction: row;
+   /* flex-wrap: nowrap; */
+   margin: 5px 6px;
+   padding: 0;
+   line-height: 90%;
+   font-size: 1.7rem;
+
+
+ }
+ .navBarChoices{
+   /* margin-left: 1rem; */
+   width: 100%;
+   height: 100px;
+ }
+ .greeting{
+   font-size: 2rem;
+ }
+ /* #closedCartBubble {
+   position: fixed;
+   top: 9%;
+   left: 1%;
+   font-size: 2rem;
+  
+ } */
+ .cart-closed2{
+   top: 9%;
+   left: 1%;
+
+ }
+ h5{
+   font-size: 2rem;
+ }
+footer{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+}
+
+
+ }
+
+
+@media screen and (max-width: 375px) {
    * {
     font-size:.8rem;
   }
   body {
     background-size:cover;
+    /* background: khaki; */
+    background-position: 55% 0;
+    
+  }
+  .navHeader{
+    margin-bottom: .5rem;
+    height: 80%;
   }
   .navTitle{
     display: flex;
@@ -577,73 +1018,111 @@ button {
   }
   .title{
     display: flex;
-    justify-content: center;
-    margin-left: 2rem;
+    /* justify-content: space-evenly; */
+    flex-wrap: nowrap;
+    margin-left: 0;
     width: 100%;
-    margin-top: 5px;
-    margin-bottom: 3rem;
-    font-size: 1.5rem;
+    margin-top: 10px;
+    /* margin-bottom: 3rem; */
+    font-size: 1.4rem;
+    padding-right: 4rem;
+  
+    margin-right: 1rem;
   }
   .roundicon{
-    height: 40%;
+    height: 10%;
+    width: 10px;
   }
   .allCart{
   font-size: 20px;
   }
   .endState {
-    top: 2%;
-    left: 80%;
+    top: 10%;
+    left: 72%;
     width: 15%;
     height: 8%;
     z-index: 1;
   }
   .initialState {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    color: #ffffff;
+    align-content: center;
     top: 4rem;
     left: 0;
     width: 100%;
-    height: 3rem;
+    /* height: 3rem; */
     transition: .5s;
     position: fixed;
     z-index: 1;
     margin-left: 4px;
-
+    height: 150px;
+    padding: 0;
+  }
+  .holder{
+    margin-top: 3rem;
+  }
+  #navGreeting{
+    font-size: 1.6rem;
+    padding: 10px;
   }
   .initialState2 {
     display: flex;
-    padding: 35px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 20px 20px 20px 0;
+
     justify-content: center;
-    top: 1rem;
+    top: 6rem;
     left: 1rem;
     width: 100%;
     z-index: 1;
+    height: 90px;
   }
   .navBarItems{
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction:row ;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin: 0 3px;
-    padding: 0;
+    padding: 2rem;
+    width: 90%;
+    height: 200px;
     margin-left: 4px;
+    
   }
   .navButton{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    margin: 2px 6px;
+    /* flex-wrap: nowrap; */
+    margin: 5px 6px;
     padding: 0;
     line-height: 90%;
     font-size: 1.7rem;
 
+
   }
   .navBarChoices{
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
+    width: 100%;
+    height: 100px;
   }
   .greeting{
     font-size: 2rem;
+  }
+  /* #closedCartBubble {
+    position: fixed;
+    top: 9%;
+    left: 1%;
+    font-size: 2rem;
+   
+  } */
+  .cart-closed2{
+    top: 9%;
+    left: 1%;
+
   }
   h5{
     font-size: 2rem;
@@ -658,4 +1137,162 @@ footer{
 
   }
 
-
+  @media screen and (max-width: 320px) {
+    * {
+     font-size:.8rem;
+   }
+   body {
+     background-size:cover;
+     /* background: khaki; */
+     background-position-x: 55% ;
+     width: 100%;
+     /* background-position-y: 20%; */
+   }
+   .navHeader{
+     margin-bottom: .5rem;
+     height: 80%;
+     
+   }
+   .navTitle{
+     display: flex;
+     align-items: center;
+     width: 100%;
+     justify-content: center;
+     margin-left: 3rem;
+     margin-bottom: 3rem;
+   }
+   .navLogo{
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content:space-between;
+     margin-left: 2rem;
+    
+   }
+   .title{
+     display: flex;
+     /* justify-content: space-evenly; */
+     flex-wrap: nowrap;
+     margin-left: 0;
+     width: 100%;
+     margin-top: 10px;
+     /* margin-bottom: 3rem; */
+     font-size: 1.4rem;
+     padding-right: 3rem;
+     margin-right: 1rem;
+   
+     text-align: center;
+   }
+   .holder{
+     height: 50%;
+   }
+   .roundicon{
+     height: 10%;
+     width: 10px;
+     padding: 0;
+     margin: 0;
+   }
+   .allCart{
+   font-size: 20px;
+   }
+   .endState {
+     top: 10%;
+     left: 72%;
+     width: 15%;
+     height: 8%;
+     z-index: 1;
+   }
+   .initialState {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-content: center;
+     top: 5rem;
+     left: 0;
+     width: 100%;
+     /* height: 3rem; */
+     transition: .5s;
+     position: fixed;
+     z-index: 1;
+     /* margin-left: 4px; */
+     height: 150px;
+     padding: 0;
+   }
+   .holder{
+     margin-top: 3rem;
+   }
+   #navGreeting{
+     font-size: 1.6rem;
+     padding: 10px;
+   }
+   .initialState2 {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-content: center;
+     padding: 20px 20px 20px 0;
+ 
+     justify-content: center;
+     top: 6rem;
+     left: 1rem;
+     width: 100%;
+     z-index: 1;
+     height: 90px;
+   }
+   .navBarItems{
+     display: flex;
+     flex-direction:row ;
+     align-content: center;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     margin: 5px 3px;
+     padding: 2rem;
+     width: 90%;
+     height: 200px;
+     margin-left: 4px;
+     
+   }
+   .navButton{
+     display: flex;
+     flex-direction: row;
+     /* flex-wrap: nowrap; */
+     margin: 4px 3px;
+     padding: 0;
+     line-height: 90%;
+     font-size: 1.7rem;
+ 
+ 
+   }
+   .navBarChoices{
+     /* margin-left: 1rem; */
+     width: 100%;
+     height: 100px;
+   }
+   .greeting{
+     font-size: 2rem;
+   }
+   /* #closedCartBubble {
+     position: fixed;
+     top: 9%;
+     left: 1%;
+     font-size: 2rem;
+    
+   } */
+   .cart-closed2{
+     top: 9%;
+     left: 1%;
+ 
+   }
+   h5{
+     font-size: 2rem;
+   }
+ footer{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+ }
+ 
+ 
+   }
+ 

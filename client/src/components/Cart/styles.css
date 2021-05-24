@@ -104,3 +104,42 @@
     }
     
   }
+  @media screen and (max-width: 375px) {
+  .cart-closed2{
+    top: 10%;
+    left: 1%;
+
+  }
+  .cart-closed {
+    position: fixed;
+    /* margin: 0 auto; */
+    right: 85%;
+    width: 12%;
+    height: 8%;
+    margin-left: 1rem;
+  }
+}
+  @media screen and (max-width: 414px) {
+  .cart-closed2{
+    top: 10%;
+    left: 1%;
+
+  }
+  .cart-closed {
+    position: fixed;
+    /* margin: 0 auto; */
+    right: 85%;
+    width: 12%;
+    height: 8%;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cart-closed{
+    
+    width:10%;
+    height: 10%;
+
+  }
+}

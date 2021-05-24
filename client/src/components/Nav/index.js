@@ -28,6 +28,7 @@ function Nav({ setCategory }) {
             document.getElementById("navBarItems").setAttribute("class", "displaynone")
             document.getElementById("navTitle").setAttribute("class", "displayhidden")
             document.getElementById("navGreeting").setAttribute("class", "displayhidden")
+            document.getElementById("holder").setAttribute("class", "displayhidden")
             document.getElementById("closedCartBubble").setAttribute("class", "cart-closed2")
         }else {
             document.getElementById("navBar").setAttribute("class", "initialState")
@@ -80,7 +81,7 @@ function Nav({ setCategory }) {
         if(test.classList.contains("endState")){
             console.log("closed")
             document.getElementById("navBar").setAttribute("class", "initialState2")
-            document.getElementById("navBarItems").setAttribute("class", "flex-row-right2")
+            document.getElementById("navBarItems").setAttribute("class", "navBarItems")
         }
     }
 
@@ -114,12 +115,12 @@ function Nav({ setCategory }) {
                     }}> {item.name}</button>
             ))}
                      {/* Link to Signup and Login */}
-                    <button className="mx-1 navButton">
+                    <button className="navButton">
                         <Link className="navButton"to="/signup">
                             Signup
                         </Link>
                     </button>
-                    <button className="mx-1 navButton">
+                    <button className="navButton">
                         <Link className="navButton" to="/login">
                             Login
                         </Link>
@@ -144,7 +145,7 @@ function Nav({ setCategory }) {
             </div>
             {/* End OF Title Bar */}
             {/* Nav Bar Items and If/Else Code from Above */}
-            <div id="navBar" onClick={()=>{isNavOpen()}} className="navBarChoices">
+            <div id="navBar" onClick={()=>{isNavOpen()}} className="initialState">
                 {showNavigation()}
             </div>
             {/* Greeting Below */}
