@@ -44,6 +44,7 @@
     padding: .25rem;
     width: 50px;
     height: 50px;
+    z-index: 2;
   }
   .cart-closed2{
     position: fixed;
@@ -72,6 +73,14 @@
     margin: 0 .5rem 1rem 0;
   }
   
+  @media screen and (max-width: 1024px) {
+    .cart-closed{
+      
+      width:10%;
+      height: 10%;
+  
+    }
+  }
   @media screen and (max-width: 768px) {
     .cart {
       position: fixed;
@@ -104,21 +113,39 @@
     }
     
   }
-  @media screen and (max-width: 375px) {
-  .cart-closed2{
-    top: 10%;
-    left: 1%;
-
+  @media screen and (max-width: 690px) {
+    .cart {
+      position: fixed;
+      max-width: 100%;
+      min-width: 50%;
+      max-height: auto;
+      box-shadow: none;
+      background-color: inherit;
+      font-size: 2rem;
+    }
+   .cart>*{
+     font-size: 3rem;
+   }
+  
+    .cart-closed {
+      position: fixed;
+      /* margin: 0 auto; */
+      right: 85%;
+      width:10%;
+    height: 10%;
+      margin-left: 1rem;
+    }
+    .cart-closed2 {
+      position: fixed;
+      /* margin: 0 auto; */
+      right: 85%;
+      width: 12%;
+      height: 8%;
+      margin-left: 1rem;
+      top: 10%;
+    }
+    
   }
-  .cart-closed {
-    position: fixed;
-    /* margin: 0 auto; */
-    right: 85%;
-    width: 12%;
-    height: 8%;
-    margin-left: 1rem;
-  }
-}
   @media screen and (max-width: 414px) {
   .cart-closed2{
     top: 10%;
@@ -134,12 +161,18 @@
     margin-left: 1rem;
   }
 }
+  @media screen and (max-width: 375px) {
+    .cart-closed2{
+    top: 10%;
+    left: 1%;
 
-@media screen and (max-width: 1024px) {
-  .cart-closed{
-    
-    width:10%;
-    height: 10%;
-
+  }
+  .cart-closed {
+    position: fixed;
+    /* margin: 0 auto; */
+    right: 85%;
+    width: 13%;
+    height: 6%;
+    margin-left: 1rem;
   }
 }
