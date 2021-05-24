@@ -5,19 +5,15 @@
   "main": "index.js",
   "private": true,
   "proxy": "http://localhost:3001/",
-
   "scripts": {
     "test": "react-scripts test",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
-    
   },
-
   "eslintConfig": {
     "extends": "react-app"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",

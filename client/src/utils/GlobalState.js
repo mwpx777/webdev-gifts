@@ -13,10 +13,11 @@ const StoreProvider = ({value= [], ...props}) => {
         cart: [],
         cartOpen: false,
         categories: [],
-        currentCategory: ''
+        currentCategory: '',
     });
     return <Provider value = {[state, dispatch]} {...props} />
 };
+
 
 // when this function runs within a component, will receive [state, dispatch] date the StoreProvier manages
 const useStoreContext = () => {
