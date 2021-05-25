@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import {useMutation} from '@apollo/react-hooks';
 import Auth from '../utils/auth';
 import {ADD_USER} from '../utils/mutations';
+// import Jumbotron from '../components/Jumbotron'
 
 function Signup(props) {
     const [formState, setFormState] = useState({email: '', password: ''});
@@ -89,6 +90,7 @@ function Signup(props) {
             </form>
             </div>
         </div>
+
         </>
         );
 };

@@ -36,10 +36,19 @@ function Success() {
         <div>
             <Jumbotron>
                 <div className="successBackground">
-                <h1>Success!</h1>
-                <h2>Thank you for your purchase!</h2>
-                <h2>You will now be redirected to the home page</h2>
+                    <div className="container">
+                        <div className="row">
+                            <h1>Success!</h1>
+                        </div>
+                        <div className="row">
+                            <h2>Thank you for your purchase!</h2>
+                        </div>
+                        <div className="row">
+                            <h2>You will now be redirected to the home page</h2>
+                        </div>
+                    </div>
                 </div>
+
             </Jumbotron>
         </div>
     );

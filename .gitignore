@@ -22,4 +22,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 .eslintcache 
+=======
+# dotenv environment variables file
+.env
+.env.test
+>>>>>>> develop

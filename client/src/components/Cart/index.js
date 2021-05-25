@@ -6,7 +6,8 @@ import Auth from '../../utils/auth';
 import './styles.css';
 // useLazyQuery will only run when calles upon
 import { useLazyQuery } from '@apollo/react-hooks'
-
+// was trying to change the cart image below
+// import cartimg from '../../assets/fastcart.png'
 // this will establish a state variable
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
@@ -55,7 +56,7 @@ const Cart = () => {
 
     if (!state.cartOpen) {
         return (
-            <div className="cart-closed" onClick={toggleCart}>
+            <div id="closedCartBubble"className="cart-closed" onClick={toggleCart}>
                 <span
                     role="img"
                     aria-label="trash">🛒</span>
@@ -91,17 +92,17 @@ const Cart = () => {
     return (
         <div className="cart" id="cart">
             <div className="close" id="cartClose" onClick={toggleCart}>X</div>
-            <h2><b>Shopping Cart</b></h2>
+            <h2 ><b className="allCart">Shopping Cart</b></h2>
             {state.cart.length ? (
                 <div>
                     {state.cart.map(item => (
                         <CartItem key={item._id} item={item} />
                     ))}
                     <div className="flex-row space-between">
-                        <strong>Total: ${calculateTotal()}</strong>
+                        <strong className="allCart">Total: ${calculateTotal()}</strong>
                         {
                             Auth.loggedIn() ?
-                                <button onClick={submitCheckout}>
+                                <button className="allCart" onClick={submitCheckout}>
                                     Checkout
                   </button>
                                 :
