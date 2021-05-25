@@ -9,7 +9,7 @@ function Footer() {
             <div  >
                 <div className="row" id="footer">
 
-                    <h3>&#169; 2021 Created by Adam Ramos, John Halley and Mark Peterson</h3>
+                    <h3>&#169; 2021 Created by Adam Ramos, John Halley, and Mark Peterson</h3>
                     
                    
 
