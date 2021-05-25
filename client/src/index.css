@@ -250,11 +250,6 @@ button {
   margin: 1rem;
 }
 
-.price h3{
-  padding-bottom: 20px;
-}
-
-
 #addToCart {
   border-radius: 10px;
   padding-left: 2rem;
@@ -271,10 +266,12 @@ button {
   border-radius: 28px;
   background-color: var(--red);
   color: white;
+  padding: 0px 18px;
+  margin: 0;
 }
 
 .dropdown {
-  border: 1px solid var(--red);
+  border: 2px solid var(--red);
 }
 /* Pulse Grow */
 @-webkit-keyframes hvr-pulse-grow {

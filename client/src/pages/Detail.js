@@ -111,12 +111,14 @@ function Detail() {
                     <div className= "col-5">
                         <h1 className= "animate__animated animate__lightSpeedInRight">{currentProduct.name}</h1>
                         <h3>Price: ${currentProduct.price}{" "}</h3>
-                    <div className="row justify-content-start">
+                    <div className="row justify-content-start py-4">
+                        
                     {
                         currentProduct._id == "60a6f97604860b499ce41857" || currentProduct._id == "60a6f97604860b499ce41856" ?
                             (
                                 <div>
                                     <select className="form-select dropdown" aria-label="Default select example" onChange={handleSelect} id="dropdown">
+                                        <option>Select Size</option>
                                         <option value="Small">Small</option>
                                         <option value="Medium">Medium</option>
                                         <option value="Large">Large</option>
@@ -125,14 +127,15 @@ function Detail() {
                                 </div>
                             ) : null
                     }
-                    
-                    <button className="hvr-pulse-grow"id="addToCartBtn" onClick={addToCart}>
+                    <div className="px-4">
+                    <button className="hvr-pulse-grow" id="addToCartBtn" onClick={addToCart}>
                             Add To Cart
                         </button>
                         </div>
+                        </div>
                         
                     <div>
-                        <h3>Product Detail:</h3>
+                        <h3>Product Details:</h3>
                     <p>{currentProduct.description}</p>
                     </div>
                     </div>
