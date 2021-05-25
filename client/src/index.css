@@ -256,8 +256,12 @@ button {
   border-radius: 10px;
   background-color: var(--red);
   color: white;
+  padding: 0.2rem;
   
 }
+
+
+
 
 /* Pulse Grow */
 @-webkit-keyframes hvr-pulse-grow {

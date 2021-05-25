@@ -24,8 +24,14 @@ function Detail() {
     const { products, cart } = state;
     const [value, setValue] = useState('');
 
-    const addToCart = () => {
+    const addToCart = (e) => {
+        console.log("here");
         const itemInCart = cart.find((cartItem) => cartItem._id === id);
+
+        // if (value === null) {
+        //     alert("Please choose a size!")
+        //     return
+        // }
 
         if (itemInCart) {
             dispatch({
@@ -89,10 +95,7 @@ function Detail() {
 
     const handleSelect = (e) => {
         console.log(e.target.value);
-
         setValue(e.target.value);
-
-
     }
 
 
@@ -102,7 +105,7 @@ function Detail() {
                 <div className="container">
                     <Link to="/" id="backLink">
                         <span id="back"> ← Back to Products</span>
-                </Link>
+                    </Link>
                     <div className="detail-row animate__animated animate__lightSpeedInLeft">
                         <h1>{currentProduct.name}</h1>
                     </div>
@@ -119,6 +122,7 @@ function Detail() {
                                 <div className="detail-row">
                                     <h3>Choose a size </h3>
                                     <select className="form-select" aria-label="Default select example" onChange={handleSelect} id="dropdown">
+                                        <option value="empty">Select a size</option>
                                         <option value="Small">Small</option>
                                         <option value="Medium">Medium</option>
                                         <option value="Large">Large</option>
@@ -127,9 +131,12 @@ function Detail() {
                                 </div>
                             ) : null
                     }
+                    {
+
+                    }
 
                     <div className="detail-row"><h2>Price: ${currentProduct.price}{" "}</h2>
-                        <button className="hvr-pulse-grow"id="addToCartBtn" onClick={addToCart}>
+                        <button className="hvr-pulse-grow" id="addToCartBtn" onClick={addToCart}>
                             Add To Cart
                         </button>
                     </div>
