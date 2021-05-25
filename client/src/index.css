@@ -81,6 +81,15 @@ button {
   color: white;
 }
 
+.small-container{
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 5px;
+} 
+
+
+
 #dropdown{
   display: flex;
   justify-content: center;
@@ -240,6 +249,12 @@ button {
   align-items: center;
   margin: 1rem;
 }
+
+.price h3{
+  padding-bottom: 20px;
+}
+
+
 #addToCart {
   border-radius: 10px;
   padding-left: 2rem;
@@ -253,12 +268,14 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 28px;
   background-color: var(--red);
   color: white;
-  
 }
 
+.dropdown {
+  border: 1px solid var(--red);
+}
 /* Pulse Grow */
 @-webkit-keyframes hvr-pulse-grow {
   to {
