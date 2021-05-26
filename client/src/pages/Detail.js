@@ -94,6 +94,7 @@ function Detail() {
 
 
     }
+    
 
 
     return (
