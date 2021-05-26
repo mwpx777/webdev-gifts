@@ -1,16 +1,6 @@
 
 
-  <h3 align="center">Webdev Gifts</h3>
-
-  <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-  </p>
-</p>
+  # Webdev Gifts
 
 
 
@@ -25,84 +15,66 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#deployed">Deployed Application</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#credits">Credits</a></li>
   </ol>
 </details>
 
 
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Congratulations! You are one of the lucky few who have reached the end of your online coding bootcamp through UW Extend! Take the time to pat your self on the back. 
 
-This site was created using React to sell merch to individuals who have completed this bootcamp as a way to show their accomplishment.
+This site was created using React to sell merch to individuals who have completed their bootcamp as a way to show off their accomplishment.
 
-Note: This does not actully have these products to sell.
+Note: This does not actully sell these products
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+![image](https://user-images.githubusercontent.com/74389460/119738511-6f58a280-be46-11eb-8f4b-d1a047216837.png)
+
+
+![image](https://user-images.githubusercontent.com/74389460/119738523-7384c000-be46-11eb-8eb2-d3620076efbd.png)
 
 
 ### Built With
 
-* [React.js]()
-* [Express.js]()
-* [MongoDb]()
-* [Mongoose]()
-* [Apollo Sever]()
-* [Stripe]()
+* React.js
+* Express.js
+* MongoDb
+* Mongoose
+* Apollo Sever
+* Stripe
+* Bootstrap
 
 
 
+## Deployed 
 
-## Getting Started
+[Webdev Gifts](https://webdev-gifts1.herokuapp.com/)
 
+## License 
 
-### Prerequisites
-
-
-
-### Installation
+(https://opensource.org/licenses/MIT)
 
 
 
+## Credits
 
-## Usage
+Mark Peterson:
 
+* GitHub: https://github.com/mwpx777
 
+Adam Ramos: 
 
+* GitHub: https://github.com/AdamR-Work.
 
+John Halley:
 
-## License
-
-
-
-
-
-## Contact
-
+* GitHub: https://github.com/Halleys-Comet
 
 
-
-
-## Acknowledgements
-
-* []()
-* []()
-* []()
 
 
 
