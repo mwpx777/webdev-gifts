@@ -106,13 +106,6 @@ function Detail() {
                 <div className="container-fluid">
                     <Link to="/" id="backLink">
                         <span id="back"> ← Back to Products</span>
-<<<<<<< HEAD
-                </Link>
-                <div className="detail-row">
-                    <div className= "col-5 small-container">
-                    <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} id="detailImage" className="animate__animated animate__backInDown" width="100%"/>
-                        
-=======
                     </Link>
                     <div className="detail-row animate__animated animate__lightSpeedInLeft">
                         <h1>{currentProduct.name}</h1>
@@ -123,7 +116,6 @@ function Detail() {
                     <div className="detail-row">
 
                         <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} id="detailImage" className="animate__animated animate__backInDown" />
->>>>>>> 92e88a197eee10cf16e3418afdfe3d1a0b02b44f
                     </div>
                     <div className= "col-5">
                         <h1 className= "animate__animated animate__lightSpeedInRight">{currentProduct.name}</h1>
@@ -133,16 +125,10 @@ function Detail() {
                     {
                         currentProduct._id == "60a6f97604860b499ce41857" || currentProduct._id == "60a6f97604860b499ce41856" ?
                             (
-<<<<<<< HEAD
-                                <div>
-                                    <select className="form-select dropdown" aria-label="Default select example" onChange={handleSelect} id="dropdown">
-                                        <option>Select Size</option>
-=======
                                 <div className="detail-row">
                                     <h3>Choose a size </h3>
                                     <select className="form-select" aria-label="Default select example" onChange={handleSelect} id="dropdown">
                                         <option value="empty">Select a size</option>
->>>>>>> 92e88a197eee10cf16e3418afdfe3d1a0b02b44f
                                         <option value="Small">Small</option>
                                         <option value="Medium">Medium</option>
                                         <option value="Large">Large</option>
@@ -151,17 +137,12 @@ function Detail() {
                                 </div>
                             ) : null
                     }
-<<<<<<< HEAD
-                    <div className="px-4">
-                    <button className="hvr-pulse-grow" id="addToCartBtn" onClick={addToCart}>
-=======
                     {
 
                     }
 
                     <div className="detail-row"><h2>Price: ${currentProduct.price}{" "}</h2>
                         <button className="hvr-pulse-grow" id="addToCartBtn" onClick={addToCart}>
->>>>>>> 92e88a197eee10cf16e3418afdfe3d1a0b02b44f
                             Add To Cart
                         </button>
                         </div>
@@ -173,7 +154,7 @@ function Detail() {
                     </div>
                     </div>
                     </div>
-                </div>
+               
 
             ) : null}
             {
