@@ -13,3 +13,4 @@ icons: [{
     destination: path.join("assets", "icons")
 }]
 })
+// test
